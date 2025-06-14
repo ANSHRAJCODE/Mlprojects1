@@ -16,7 +16,7 @@ from src.utils import save_object
 
 @dataclass
 class DataTransformationConfig:
-    preprocessor_obj_file_path=os.path.join('artifacts',"preprocessor.pkl")
+    preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
 
 class DataTransformation:
     def __init__(self):
@@ -25,6 +25,7 @@ class DataTransformation:
     def get_data_transformer_object(self):
         '''
         This function si responsible for data trnasformation
+        
         '''
         try:
             numerical_columns = ["writing_score", "reading_score"]
@@ -78,7 +79,7 @@ class DataTransformation:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
 
-            logging.info("Train and Test data reading is completed")
+            logging.info("Read train and test data completed")
 
             logging.info("Obtaining preprocessing object")
 
